@@ -3,19 +3,91 @@
 副業ナビ系のLPで画像の切り替え処理をするライブラリ
  
 # DEMO
- 
-"hoge"の魅力が直感的に伝えわるデモ動画や図解を載せる
+index.php
+
+```bash
+<div class="q1 relative questions">
+   <p><img src="img/nabi_a_01.png"></p>
+   <div class="absolute answer1 flex">
+       <p><img src="img/nabi_a_c_1.png" class="a1"></p>
+       <p><img src="img/nabi_a_c_2.png" class="a1"></p>
+   </div>
+</div>
+<div class="padding_t40"></div>
+<div class="q2 relative questions">
+   <p><img src="img/nabi_a_02.png"></p>
+   <div class="absolute answer2">
+       <div class="flex">
+           <p ><img src="img/nabi_a_02_1.png" class="a2"></p>
+           <p ><img src="img/nabi_a_02_2.png" class="a2"></p>
+       </div>
+       <div class="flex">
+           <p><img src="img/nabi_a_02_3.png" class="a2"></p>
+           <p><img src="img/nabi_a_02_4.png" class="a2"></p>
+       </div>
+       <div class="flex2 margin_auto">
+           <p class="c margin_auto"><img src="img/nabi_a_02_5.png" class="a2"></p>
+       </div>
+   </div>
+</div>
+<div class="padding_t40"></div>
+<div class="q3 relative questions">
+   <p><img src="img/nabi_a_03.png"></p>
+   <div class="absolute answer3">
+       <div class="flex">
+           <p><img src="img/nabi_a_03_1.png" class="a3"></p>
+           <p><img src="img/nabi_a_03_2.png" class="a3"></p>
+       </div>
+       <div class="flex">
+           <p><img src="img/nabi_a_03_3.png" class="a3"></p>
+           <p><img src="img/nabi_a_03_4.png" class="a3"></p>
+       </div>
+   </div>
+</div>
+<div class="padding_t40"></div>
+<div class="q4 relative questions">
+   <p><img src="img/nabi_a_04.png"></p>
+   <div class="absolute answer4">
+       <div class="flex">
+           <p><img src="img/nabi_a_04_1.png" class="a4"></p>
+           <p><img src="img/nabi_a_04_2.png" class="a4"></p>
+       </div>
+       <div class="flex">
+           <p><img src="img/nabi_a_03_3.png" class="a4"></p>
+           <p><img src="img/nabi_a_02_5.png" class="a4"></p>
+       </div>
+   </div>
+</div>
+```
+
+ ```bash
+<script src="https://cdn.jsdelivr.net/gh/If-you-give-up-then-it-all-ends-here/changeImg-library@v1.0.4/dist/index.js"></script>
+<script>
+    const answers1 = document.querySelectorAll(".a1")
+    const answers2 = document.querySelectorAll(".a2")
+    const answers3 = document.querySelectorAll(".a3")
+    const answers4 = document.querySelectorAll(".a4")
+
+    changeImgLibrary.changeAnswerImg(answers1, false)
+    changeImgLibrary.changeAnswerImg(answers2, true, 2)
+    changeImgLibrary.changeAnswerImg(answers3, false)
+    changeImgLibrary.changeAnswerImg(answers4, false)
+</script>
+ ```
+
  
  
 # Requirement
  
 LP側ですること
 
-質問ごとにいくつか答えの画像があるが、その質問ごとのimgタグに同じクラス属性を追加する。    
-(例)    
+1. 画像の名前を変更する  
+   (例)    
+   選択する前の画像 -> nabi_a_04.png  
+   選択後の画像 -> nabi_a_04_after.png　(afterを最後につけ加える)
 
-
-
+2. 質問ごとにいくつか答えの画像があるが、その質問ごとの答えのimgタグに同じクラス属性を追加する。    
+(例) 
 ```bash
 <!-- question1 -->
 <div class="q1 relative questions">
@@ -53,16 +125,29 @@ LP側ですること
  ```bash
  npm i changeImg-library
  ```
+2. CDNで使用する場合
+ ```bash
+ <script src="https://cdn.jsdelivr.net/gh/If-you-give-up-then-it-all-ends-here/changeImg-library@v1.0.4/dist/index.js"></script>
+ ```
  
 # Usage
  
-DEMOの実行方法など、"hoge"の基本的な使い方を説明する
+1. グローバル変数を設定する(imgタグに追加したクラスを指定する)
  
 ```bash
-git clone https://github.com/hoge/~
-cd examples
-python demo.py
+const グローバル変数 = document.querySelectorAll(".クラス名")
 ```
+
+2. 関数呼び出し  
+   a). ひとつの答えのみ選択できる場合
+  ```bash
+changeImgLibrary.changeAnswerImg(グローバル変数, false)
+```
+b). 複数の答えが選択できる場合
+  ```bash
+changeImgLibrary.changeAnswerImg(グローバル変数, true, 選択できる数)
+```
+       
  
 # Note
  
