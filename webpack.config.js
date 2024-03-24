@@ -14,6 +14,8 @@ module.exports = (env) => {
                   filename: 'index.js',
                   // 出力ディレクトリの絶対パス
                   path: path.resolve(__dirname, 'dist'),
+                  library: 'changeImgLibrary',
+                  libraryTarget: 'umd'
             },
       }
       
