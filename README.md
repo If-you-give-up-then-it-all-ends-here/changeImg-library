@@ -68,10 +68,10 @@ index.php
     const answers3 = document.querySelectorAll(".a3")
     const answers4 = document.querySelectorAll(".a4")
 
-    changeImgLibrary.changeAnswerImg(answers1, false)
-    changeImgLibrary.changeAnswerImg(answers2, true, 2)
-    changeImgLibrary.changeAnswerImg(answers3, false)
-    changeImgLibrary.changeAnswerImg(answers4, false)
+    changeImgLibrary.changeAnswerImg(answers1, false, "png")
+    changeImgLibrary.changeAnswerImg(answers2, true, "png", 2)
+    changeImgLibrary.changeAnswerImg(answers3, false, "png")
+    changeImgLibrary.changeAnswerImg(answers4, false, "png")
 </script>
  ```
 
@@ -141,11 +141,11 @@ const グローバル変数 = document.querySelectorAll(".クラス名")
 2. 関数呼び出し  
    a). ひとつの答えのみ選択できる場合
   ```bash
-changeImgLibrary.changeAnswerImg(グローバル変数, false)
+changeImgLibrary.changeAnswerImg(グローバル変数, false、画像拡張子)
 ```
 b). 複数の答えが選択できる場合
   ```bash
-changeImgLibrary.changeAnswerImg(グローバル変数, true, 選択できる数)
+changeImgLibrary.changeAnswerImg(グローバル変数, true, 選択できる数, 画像拡張子)
 ```
        
  
