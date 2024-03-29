@@ -61,7 +61,7 @@ index.php
 ```
 
  ```bash
-<script src="https://cdn.jsdelivr.net/gh/If-you-give-up-then-it-all-ends-here/changeImg-library@v1.0.9/dist/index.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/If-you-give-up-then-it-all-ends-here/changeImg-library@v1.1.0/dist/index.js"></script>
 <script>
     const answers1 = document.querySelectorAll(".a1")
     const answers2 = document.querySelectorAll(".a2")
@@ -127,7 +127,7 @@ LP側ですること
  ```
 2. CDNで使用する場合
  ```bash
- <script src="https://cdn.jsdelivr.net/gh/If-you-give-up-then-it-all-ends-here/changeImg-library@v1.0.9/dist/index.js"></script>
+ <script src="https://cdn.jsdelivr.net/gh/If-you-give-up-then-it-all-ends-here/changeImg-library@v1.1.0/dist/index.js"></script>
  ```
  
 # Usage
