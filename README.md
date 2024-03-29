@@ -61,17 +61,17 @@ index.php
 ```
 
  ```bash
-<script src="https://cdn.jsdelivr.net/gh/If-you-give-up-then-it-all-ends-here/changeImg-library@v1.0.4/dist/index.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/If-you-give-up-then-it-all-ends-here/changeImg-library@v1.0.9/dist/index.js"></script>
 <script>
     const answers1 = document.querySelectorAll(".a1")
     const answers2 = document.querySelectorAll(".a2")
     const answers3 = document.querySelectorAll(".a3")
     const answers4 = document.querySelectorAll(".a4")
 
-    changeImgLibrary.changeAnswerImg(answers1, false, "png")
-    changeImgLibrary.changeAnswerImg(answers2, true, "png", 2)
-    changeImgLibrary.changeAnswerImg(answers3, false, "png")
-    changeImgLibrary.changeAnswerImg(answers4, false, "png")
+    changeImgLibrary.changeAnswerImg(answers1, "png", 1)
+    changeImgLibrary.changeAnswerImg(answers2, "png", 2)
+    changeImgLibrary.changeAnswerImg(answers3, "png", 1)
+    changeImgLibrary.changeAnswerImg(answers4, "png", 3)
 </script>
  ```
 
@@ -93,8 +93,8 @@ LP側ですること
 <div class="q1 relative questions">
     <p><img src="img/nabi_a_01.png"></p>
     <div class="absolute answer1 flex">
-        <p><img src="img/nabi_a_c_1.png" class="a1"></p>
-        <p><img src="img/nabi_a_c_2.png" class="a1"></p>
+        <p><img src="img/nabi_a_c_1.png" class="クラス名1"></p>
+        <p><img src="img/nabi_a_c_2.png" class="クラス名1"></p>
     </div>
 </div>
 
@@ -104,15 +104,15 @@ LP側ですること
     <p><img src="img/nabi_a_02.png"></p>
     <div class="absolute answer2">
         <div class="flex">
-            <p ><img src="img/nabi_a_02_1.png" class="a2"></p>
-            <p ><img src="img/nabi_a_02_2.png" class="a2"></p>
+            <p ><img src="img/nabi_a_02_1.png" class="クラス名2"></p>
+            <p ><img src="img/nabi_a_02_2.png" class="クラス名2"></p>
         </div>
         <div class="flex">
-            <p><img src="img/nabi_a_02_3.png" class="a2"></p>
-            <p><img src="img/nabi_a_02_4.png" class="a2"></p>
+            <p><img src="img/nabi_a_02_3.png" class="クラス名2"></p>
+            <p><img src="img/nabi_a_02_4.png" class="クラス名2"></p>
         </div>
         <div class="flex2 margin_auto">
-            <p class="c margin_auto"><img src="img/nabi_a_02_5.png" class="a2"></p>
+            <p class="c margin_auto"><img src="img/nabi_a_02_5.png" class="クラス名2"></p>
         </div>
     </div>
 </div>
@@ -127,7 +127,7 @@ LP側ですること
  ```
 2. CDNで使用する場合
  ```bash
- <script src="https://cdn.jsdelivr.net/gh/If-you-give-up-then-it-all-ends-here/changeImg-library@v1.0.4/dist/index.js"></script>
+ <script src="https://cdn.jsdelivr.net/gh/If-you-give-up-then-it-all-ends-here/changeImg-library@v1.0.9/dist/index.js"></script>
  ```
  
 # Usage
@@ -139,14 +139,11 @@ const グローバル変数 = document.querySelectorAll(".クラス名")
 ```
 
 2. 関数呼び出し  
-   a). ひとつの答えのみ選択できる場合
-  ```bash
-changeImgLibrary.changeAnswerImg(グローバル変数, false、画像拡張子)
+
+```bash
+changeImgLibrary.changeAnswerImg(グローバル変数, 画像拡張子, 選択できる数)
 ```
-b). 複数の答えが選択できる場合
-  ```bash
-changeImgLibrary.changeAnswerImg(グローバル変数, true, 選択できる数, 画像拡張子)
-```
+
        
  
 # Note

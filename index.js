@@ -53,7 +53,7 @@ const changeImgSrcForOthers = (targetImg, others, extension) =>{
 }
 
 
-const changeAnswerImg = (answers, multi, extension, count = "")=>{
+const changeAnswerImg = (answers, extension, count)=>{
 	let clickCount = {count: 0};
 	answers.forEach((answer)=>{
 		answer.addEventListener("click", (e)=>{
@@ -61,7 +61,7 @@ const changeAnswerImg = (answers, multi, extension, count = "")=>{
 			let targetImg = e.target.src
 			let otherImgs = Array.from(answers).filter((answer) => answer !== e.target)
 
-			if(!multi){
+			if(count == 1){
 				if(changeImgSrcForTarget(targetImg, extension) !== ""){
 					e.target.src= `img/${changeImgSrcForTarget(targetImg, extension)}`
 				}
