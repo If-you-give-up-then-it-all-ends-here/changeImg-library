@@ -61,17 +61,17 @@ index.php
 ```
 
  ```bash
-<script src="https://cdn.jsdelivr.net/gh/If-you-give-up-then-it-all-ends-here/changeImg-library@v1.1.0/dist/index.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/If-you-give-up-then-it-all-ends-here/changeImg-library@v1.1.2/dist/index.js"></script>
 <script>
     const answers1 = document.querySelectorAll(".a1")
     const answers2 = document.querySelectorAll(".a2")
     const answers3 = document.querySelectorAll(".a3")
     const answers4 = document.querySelectorAll(".a4")
 
-    changeImgLibrary.changeAnswerImg(answers1, "png", 1)
-    changeImgLibrary.changeAnswerImg(answers2, "png", 2)
-    changeImgLibrary.changeAnswerImg(answers3, "png", 1)
-    changeImgLibrary.changeAnswerImg(answers4, "png", 3)
+    changeImgLibrary.changeAnswerImg(answers1, "png", 1 , "after")
+    changeImgLibrary.changeAnswerImg(answers2, "png", 2 , "after")
+    changeImgLibrary.changeAnswerImg(answers3, "png", 1 , "after")
+    changeImgLibrary.changeAnswerImg(answers4, "png", 3 , "after")
 </script>
  ```
 
@@ -127,7 +127,7 @@ LP側ですること
  ```
 2. CDNで使用する場合
  ```bash
- <script src="https://cdn.jsdelivr.net/gh/If-you-give-up-then-it-all-ends-here/changeImg-library@v1.1.0/dist/index.js"></script>
+ <script src="https://cdn.jsdelivr.net/gh/If-you-give-up-then-it-all-ends-here/changeImg-library@v1.1.2/dist/index.js"></script>
  ```
  
 # Usage
@@ -141,7 +141,7 @@ const グローバル変数 = document.querySelectorAll(".クラス名")
 2. 関数呼び出し  
 
 ```bash
-changeImgLibrary.changeAnswerImg(グローバル変数, 画像拡張子, 選択できる数)
+changeImgLibrary.changeAnswerImg(グローバル変数, 画像拡張子, 選択できる数, ボタン押した後の画像名(例：nabi_a_02_1.png => nabi_a_02_1_after.png => "after"を入力))
 ```
 
        

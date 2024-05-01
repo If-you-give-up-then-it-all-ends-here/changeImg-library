@@ -10,7 +10,7 @@ const changeImgSrcForTarget = (targetImg, extension, name) =>{
 	let replacing_img = "";
 	let array 		= generateImgSrcArray(targetImg, extension)
 
-	if(!hasAfter(array)){
+	if(!hasAfter(array, name)){
 		array.push(name)
 		replacing_img = `${array.join("_")}.${extension}`
 	}
@@ -21,7 +21,7 @@ const changeImgSrcForTargetWithMuliti = (targetImg, clickCount, extension, count
 	let array = generateImgSrcArray(targetImg, extension)
 
 	 // "after" を追加または削除する条件をチェック
-	 if (hasAfter(array)) {
+	 if (hasAfter(array, name)) {
 	     array.splice(array.length - 1, 1); // "after" があれば削除
 	     clickCount["count"]--; // クリックカウントを減少
 	 } else if (clickCount["count"] < count) {
@@ -38,13 +38,13 @@ const changeImgSrcForOthers = (targetImg, others, extension, name) =>{
 	let array 		= generateImgSrcArray(targetImg)
 	let array_others	= generateImgSrcArray(others)
 
-	if(hasAfter(array)){
-		if(hasAfter(array_others)){
+	if(hasAfter(array, name)){
+		if(hasAfter(array_others, name)){
 			array_others.splice(array_others.length -1, 1)
 			replacing_img = `${array_others.join("_")}.${extension}`
 		}
 	}else{
-		if(!hasAfter(array)){
+		if(!hasAfter(array, name)){
 			array_others.push(name)
 			replacing_img = `${array_others.join("_")}.${extension}`
 		}
@@ -78,10 +78,10 @@ const changeAnswerImg = (answers, extension, count, name)=>{
 					if(otherImg !== e.target && clickCount["count"] == 0){
 						let array = generateImgSrcArray(otherImg.src, extension)
 						let array2 = generateImgSrcArray(targetImg, extension)
-						if(hasAfter(array)){
+						if(hasAfter(array, name)){
 							clickCount["count"] = 1
 						}
-						if(hasAfter(array2)){
+						if(hasAfter(array2, name)){
 							clickCount["count"] = 1
 						}
 					}
